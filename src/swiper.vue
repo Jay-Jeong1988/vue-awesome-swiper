@@ -99,7 +99,7 @@
         this.mountInstance()
       }
     },
-    mounted() {
+    created() {
       if (!this.swiper) {
         let setClassName = false
         for(const className in this.classes) {
@@ -110,7 +110,8 @@
             }
           }
         }
-        setClassName ? this.$nextTick(this.mountInstance) : this.mountInstance()
+        this.mountInstance()
+        this.update()
       }
     },
     activated() {
